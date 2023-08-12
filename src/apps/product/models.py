@@ -56,4 +56,3 @@ class ProductImage(models.Model):
     image = models.ImageField("Изображение",upload_to="products/images/")    
     is_main = models.BooleanField("Главное фото", default=False)
     
-

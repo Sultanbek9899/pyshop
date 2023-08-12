@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     
     # package
     'rest_framework',
+    'drf_yasg',
 
     # apps
     "src.apps.product",
-    "src.apps.account"
+    "src.apps.account",
+    'src.apps.api'
 ]
 
 MIDDLEWARE = [
@@ -57,6 +59,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'src.config.urls'
+AUTH_USER_MODEL = 'account.User' 
+
 
 TEMPLATES = [
     {
@@ -134,3 +138,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+   
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+       
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+   
+}
