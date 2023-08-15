@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # package
     'rest_framework',
     'drf_yasg',
+    'rest_framework.authtoken',
 
     # apps
     "src.apps.product",
