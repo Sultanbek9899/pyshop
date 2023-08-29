@@ -42,11 +42,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_framework.authtoken',
+    'django_filters',
 
     # apps
     "src.apps.product",
     "src.apps.account",
-    'src.apps.api'
+    "src.apps.cart",
+    'src.apps.api',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'src.apps.cart.context_processor.get_cart'
             ],
         },
     },
@@ -148,3 +151,6 @@ REST_FRAMEWORK = {
     )
    
 }
+
+
+CART_SESSION_ID = 'cart'

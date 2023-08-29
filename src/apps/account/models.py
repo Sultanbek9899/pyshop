@@ -35,7 +35,7 @@ class User(AbstractUser):
     email = models.EmailField("Электронная почта", unique=True)
     address = models.CharField("Адрес", max_length=100, null=True, blank=True)
     mobile = models.CharField("Телефон", max_length=15, null=True, blank=True)
-    
+    wishlist = models.ManyToManyField("product.Product")
     USERNAME_FIELD = 'email' # Какое поле будет использоваться в логинке
     REQUIRED_FIELDS = []
 

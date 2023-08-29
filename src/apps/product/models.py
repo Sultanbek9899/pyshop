@@ -49,6 +49,14 @@ class Product(models.Model):
     def __str__(self):
         return self.title
     
+    @property
+    def get_main_pic(self):
+        p_image = self.pics.filter(is_main=True)
+        if p_image:
+            p_image = p_image[0]
+            return p_image.image.url
+        return ""
+    
 
 
 class ProductImage(models.Model):
